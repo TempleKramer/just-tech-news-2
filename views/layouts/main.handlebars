@@ -5,9 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title href="/">Just Tech News</title>
-  <nav>
-    <a href="/login">login</a>
-  </nav>
+<nav>
+  {{#if loggedIn}}
+  <button id="logout" class="btn-no-style">logout</button>
+  {{else}}
+  <a href="/login">login</a>
+  {{/if}}
+</nav>>
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
@@ -25,7 +29,9 @@
       Thanks for visiting!
     </footer>
   </div>
-
+ {{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
 </body>
 
 </html>
